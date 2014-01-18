@@ -1,0 +1,9 @@
+------------- Changes I made for converting drupal 6 module to drupal 7 --------------
+
+* I am following all rules for writing a code.
+* hook_perm is changed to hook_permission.
+* In hook_theme 'arguments' variable is changed to 'variables' or 'render element'.
+* hook_block is removed from drupal 7, and a set of methods are included for the same functionality.
+  I have used two methods named hook_block_view() and hook_block_info().
+* hook_block_info() defines all blocks provided by this module. Here blocks are delaired dynamically so I have put loop over there.
+* hook_block_view() returns rendered view of block.Here value of 'delta' is unique.

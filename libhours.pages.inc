@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * Module functions to display library hours.
+ *
+ * @author Parth Shah <parth.shah@ucdenver.edu>
+ * 
+ */
+
+/**
+ * Display the hours page for a giving location
+ *
+ * @param $lid Location unique identifier
+ * @param $pid Period unique identifier
+ */
+
+function libhours_display($lid = 0, $pid = 0)  {
+  global $conf;
+  // turn off drupal cache for this page
+  $conf['cache'] = false;
+	
+  return theme('hours_display', array('lid' => $lid, 'pid' => $pid));
+}
+
+/**
+ * redirects page for backwards computability
+ */
+function libhours_redirect($lid = 0)  {
+  drupal_goto('hours/' . $lid);
+}
